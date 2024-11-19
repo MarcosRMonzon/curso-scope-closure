@@ -1,6 +1,6 @@
 function sumWithClosure(firstNum) {
   let a = firstNum;
-  return function (secondNum) {
+  function secondNum (secondNum) {
       let b = secondNum;
       if (!b) {
           return a;
@@ -8,5 +8,6 @@ function sumWithClosure(firstNum) {
           return a + b;
       }
   }
+  return secondNum;
 }
-sumWithClosure(1)(2);
+console.log(sumWithClosure(1)());
